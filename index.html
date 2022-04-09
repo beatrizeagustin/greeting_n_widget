@@ -4,16 +4,51 @@
     <style>
       body, p {
         margin: 0;
+      }
+     .container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+      }
+
       p {
+        margin: 0;
         font-size: 25px;
         font-family: monospace;
         color: #ada2ff;
+        width: 500px;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 500px;
+        animation: type 1s steps(60, end);
+        -webkit-animation: type 2s steps(60, end);
+      }
+
+      .cursor {
+          display: inline-block;
+          width: 6px;
+          height: 25px;
+          background-color: #ada2ff;
+          animation: blink 0.3s infinite;
+          -webkit-animation: blink 0.3s infinite;
+      }
+
+      @keyframes type {
+        from { width: 0;}
+        to {width: 100%;}
+      }
+
+      @keyframes blink {
+          0% {opacity: 1;}
+          100% {opacity: 0;}
       }
     </style>
   </head>
   <body>
-    <p><span id="greeting">Hi</span>, Bea! It's <span id="month"></span> <span id="day"></span> <span id="year"></p>
-    <div id="time"></div>
+    <div class="container">
+      <p><span id="greeting"></span>! It's <span id="month"></span> <span id="day"></span> <span id="year"></p>
+      <div class="cursor"></div>
+    </div>
     <script>
       const d = new Date();
       const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
