@@ -21,18 +21,17 @@
         overflow: hidden;
         white-space: nowrap;
         max-width: 500px;
-      /*  animation: type 1s steps(60, end);
-        -webkit-animation: type 2s steps(60, end); */
+        animation: type 1s steps(60, end);
+        -webkit-animation: type 2s steps(60, end);
       }
 
-    /*  .cursor {
-          display: inline-block;
+      .cursor {
           width: 6px;
           height: 25px;
           background-color: #ada2ff;
           animation: blink 0.3s infinite;
           -webkit-animation: blink 0.3s infinite;
-      } */
+      }
 
       @keyframes type {
         from { width: 0;}
@@ -47,7 +46,7 @@
   </head>
   <body>
     <div class="container">
-      <p><span id="greeting"></span>! It's <span id="month"></span> <span id="day"></span> <span id="year"></p>
+      <p><span id="greeting"></span>, Bea! It's <span id="month"></span> <span id="day"></span> <span id="year"></p>
       <div class="cursor"></div>
     </div>
     <script>
