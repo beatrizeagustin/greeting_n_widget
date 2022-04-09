@@ -3,6 +3,29 @@
     <title>test</title>
   </head>
   <body>
-    <div><p>hello</p></div>
+    <p><span id="greeting">Hi</span>, Bea! It's <span id="month"></span> <span id="day"></span> <span id="year"></p>
+    <div id="time"></div>
+    <script>
+      const d = new Date();
+      const months = ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+      let month = d.getMonth();
+      let today = d.getDay();
+      let year = d.getFullYear();
+      let current_time = d.getHours();
+
+      let final = months[month]
+
+      document.getElementById("month").innerHTML = final;
+      document.getElementById("day").innerHTML = today;
+      document.getElementById("year").innerHTML = year;
+
+      if (current_time >= 0 && current_time < 12) {
+        document.getElementById("greeting").innerHTML = "Good Morning";
+      } else if (current_time >= 12 && current_time  <= 17) {
+        document.getElementById("greeting").innerHTML = "Good Afternoon";
+      } else {
+        document.getElementById("greeting").innerHTML = "Good Evening";
+      }
+    </script>
   </body>
 </html>
